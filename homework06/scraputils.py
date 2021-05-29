@@ -8,11 +8,11 @@ def extract_news(parser):
 
     # find all trs in the body
 
-    tr = parser.body.findAll("tr")[3].findAll("td")[0].findAll("tr")
+    tr = parser.body.findAll("table", {"class": "itemlist"})[0].findAll("tr")
 
     i = 0
 
-    # dictionaty which lill we append to the news_list
+    # dictionaty which we append to the news_list
     d = {"author": None, "comments": None, "points": None, "title": None, "url": None}
 
     while i < 90:
